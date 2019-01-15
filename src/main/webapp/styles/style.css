@@ -1,0 +1,29 @@
+#header {
+    position: relative;
+}
+
+#header abb{
+    position: absolute;
+    left: auto;
+    font-size: large;
+}
+
+#header ers{
+    position: absolute;
+    left: 95px;
+    padding-top: 20px;
+    font-size: medium;
+}
+
+#hr{
+    background-color: rgb(2, 136, 226);
+    height: 2px;
+}
+
+
+#footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: small;
+}
