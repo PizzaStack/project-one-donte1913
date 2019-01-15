@@ -28,30 +28,8 @@ function initLogin(){
             }
         }
 
-        xhr.open("POST", "http://localhost:8080/Project_1_Servlet/employees");
+        xhr.open("POST", "http://localhost:8080/Project_1_Servlet/verify");
 
         xhr.send("OFF");
     })();
 }
-
-
-function checkEmployee(form)/*function to check userid & password*/ {
-    /*the following code checkes whether the entered userid and password are matching*/
-    if (form.eusername.value == "employee" && form.epswrd.value == "test") {
-        window.open('employeeHomepage.html')/*opens the employee homepage page while Id & password matches*/
-
-    }
-    else {
-        alert("Username or Password incorrect ")/*displays error message*/
-    }
-};
-
-function checkManager(form)/*function to check userid & password*/ {
-    /*the following code checkes whether the entered userid and password are matching*/
-    if (form.musername.value == "manager" && form.mpswrd.value == "test") {
-        window.open('managerHomepage.html')/*opens the manager homepage  while Id & password matches*/
-    }
-    else {
-        alert("Username or Password incorrect ")/*displays error message*/
-    }
-};

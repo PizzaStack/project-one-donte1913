@@ -12,9 +12,9 @@ public class EmployeeService {
 
         DBconnector conn = new DBconnector();
         try {
-            if (conn.checkEmployee(username,password))
+          /*  if (conn.checkEmployee(username,password))
                 checkEmployeeResult = true;
-
+*/
             DBconnector.db.close();
             return checkEmployeeResult;
         } catch (SQLException e) {

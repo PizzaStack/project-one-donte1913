@@ -13,7 +13,7 @@ public class Reimbursement {
 
     public Reimbursement(String eusername, String requestSummary, int totalAmt, String receipt) {
         this.eusername = eusername;
-        this.requestSummary = requestSummary;
+        this.requestSummary = requestSummary; //To hold the description value
         this.totalAmt = totalAmt;
         this.receipt = receipt;
     }
