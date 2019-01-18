@@ -4,19 +4,18 @@ import com.revature.connection.DBConnector;
 import com.revature.models.Reimbursement;
 
 public class UploadReimbursementService {
-	private DBConnector conn;
-	
+	private DBConnector conn = new DBConnector();
+
 	public UploadReimbursementService() {
-		conn = new DBConnector();
 	}
 
 	public boolean addReimbursement(Reimbursement reimbursement) {
 		boolean addStatus = false;
-		int reimbursementId = conn.addReimbursement(reimbursement);
-		if(reimbursementId > 0) {
+		int reimbursementId = this.conn.addReimbursement(reimbursement);
+		if (reimbursementId > 0) {
 			addStatus = true;
 		}
+
 		return addStatus;
 	}
-
 }

@@ -7,14 +7,14 @@ public class Verifyn {
 	private String username;
 	private String password;
 	private int status;
-	
+
 	public Verifyn(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
 
 	public int getUserId() {
-		return userId;
+		return this.userId;
 	}
 
 	public void setUserId(int userId) {
@@ -22,7 +22,7 @@ public class Verifyn {
 	}
 
 	public int getReferenceId() {
-		return referenceId;
+		return this.referenceId;
 	}
 
 	public void setReferenceId(int referenceId) {
@@ -30,7 +30,7 @@ public class Verifyn {
 	}
 
 	public String getUsername() {
-		return username;
+		return this.username;
 	}
 
 	public void setUsername(String username) {
@@ -38,7 +38,7 @@ public class Verifyn {
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -46,7 +46,7 @@ public class Verifyn {
 	}
 
 	public int getStatus() {
-		return status;
+		return this.status;
 	}
 
 	public void setStatus(int status) {
@@ -54,12 +54,10 @@ public class Verifyn {
 	}
 
 	public String getFullName() {
-		return fullName;
+		return this.fullName;
 	}
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-
-	
 }

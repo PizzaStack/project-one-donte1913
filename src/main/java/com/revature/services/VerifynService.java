@@ -1,9 +1,9 @@
 package com.revature.services;
 
 import com.revature.connection.DBConnector;
-import com.revature.models.Verifyn;
 import com.revature.models.Employee;
 import com.revature.models.Manager;
+import com.revature.models.Verifyn;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -23,8 +23,8 @@ public class VerifynService {
 		this.conn.createConnection();
 		this.employeeInfo = new ArrayList();
 		boolean verified = false;
-		boolean usernameAuthenticated = false;
-		boolean passwordAuthenticated = false;
+		boolean uVerified = false;
+		boolean pVerified = false;
 		int employeeId = 0;
 		int status = 0;
 		String password = "";
@@ -35,17 +35,17 @@ public class VerifynService {
 		while(it.hasNext()) {
 			Verifyn employeeAccount = (Verifyn)it.next();
 			if (verify.getUsername().equals(employeeAccount.getUsername())) {
-				usernameAuthenticated = true;
+				uVerified = true;
 				password = employeeAccount.getPassword();
 				if (password.equals(verify.getPassword())) {
-					passwordAuthenticated = true;
+					pVerified = true;
 					status = employeeAccount.getStatus();
 					employeeId = employeeAccount.getReferenceId();
 				}
 			}
 		}
 
-		if (usernameAuthenticated && passwordAuthenticated && status == 1) {
+		if (uVerified && pVerified && status == 1) {
 			verified = true;
 		}
 
@@ -59,7 +59,7 @@ public class VerifynService {
 		VerifynService verifynService = new VerifynService();
 		new ArrayList();
 		List<String> employeeInfo = verifynService.verifyEmployee(verify);
-		Employee employee = conn.getEmployeeById(Integer.parseInt((String)employeeInfo.get(0)));
+		Employee employee = this.conn.getEmployeeById(Integer.parseInt((String)employeeInfo.get(0)));
 		return employee;
 	}
 
@@ -68,8 +68,8 @@ public class VerifynService {
 		this.conn.createConnection();
 		this.managerInfo = new ArrayList();
 		boolean verified = false;
-		boolean usernameAuthenticated = false;
-		boolean passwordAuthenticated = false;
+		boolean uVerified = false;
+		boolean pVerified = false;
 		int managerId = 0;
 		int status = 0;
 		String password = "";
@@ -80,17 +80,17 @@ public class VerifynService {
 		while(it.hasNext()) {
 			Verifyn managerAccount = (Verifyn)it.next();
 			if (verify.getUsername().equals(managerAccount.getUsername())) {
-				usernameAuthenticated = true;
+				uVerified = true;
 				password = managerAccount.getPassword();
 				if (password.equals(verify.getPassword())) {
-					passwordAuthenticated = true;
+					pVerified = true;
 					status = managerAccount.getStatus();
 					managerId = managerAccount.getReferenceId();
 				}
 			}
 		}
 
-		if (usernameAuthenticated && passwordAuthenticated && status == 1) {
+		if (uVerified && pVerified && status == 1) {
 			verified = true;
 		}
 
@@ -104,7 +104,7 @@ public class VerifynService {
 		VerifynService verifynService = new VerifynService();
 		new ArrayList();
 		List<String> managerInfo = verifynService.verifyManager(verify);
-		Manager manager = conn.getManagerById(Integer.parseInt((String)managerInfo.get(0)));
+		Manager manager = this.conn.getManagerById(Integer.parseInt((String)managerInfo.get(0)));
 		return manager;
 	}
 }
